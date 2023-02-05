@@ -20,7 +20,7 @@ const Navbar=()=> {
  </div>
  
  {/*list */}
- <ul className="text-white md:flex hidden list-none flex-row justify-between items-center flex-initial">
+ <ul className="text-white md:flex  list-none flex-row justify-between items-center flex-initial">
 {
      isAuthenticated ?(<li>
  <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
