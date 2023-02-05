@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-
+import { useAuth0 } from "@auth0/auth0-react";
 
 
 function AddEventForm(props) {
 
+  const { isAuthenticated } = useAuth0();
     
 const [title,setTitle]=useState("");
 const [start,setStart]=useState("");
@@ -49,8 +50,11 @@ else
     <>
          <div className="flex flex-col justify-center items-center h-[250px] w-full mt-[100px] ">
 
-        <h1 className="text-3xl md:text-5xl   ">Calendar</h1>
-      <h2 className="text-2xl md:text-3xl ">Add new Event</h2>
+ 
+        {isAuthenticated ? (<h1 className="text-3xl md:text-5xl   ">Calendar</h1>):(<h1 className="text-[80px] md:text-[100px] gradient-bg w-full flex items-center justify-center text-white">Calendar</h1>)}
+      {isAuthenticated &&<h2 className="text-2xl md:text-3xl ">Add new Event</h2>}
+        {isAuthenticated &&
+        
       <form className="py-[50px] text-2xl flex flex-col justify-center items-center w-full " onSubmit={submit}>
    
 
@@ -78,8 +82,9 @@ else
         items-center mb-[80px] text-white bg-[#2952e3] p-1 px-5 rounded-full cursor-pointer hover:bg-[#2546bd]">Submit</button>
 
       </form>
+}
+
          </div>
- 
     </>
   )
 }
