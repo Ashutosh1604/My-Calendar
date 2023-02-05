@@ -1,0 +1,8 @@
+.App {
+  text-align: center;
+}
+
+.gradient-bg{
+  background: rgb(18,49,92);
+background: radial-gradient(circle, rgba(18,49,92,1) 72%, rgba(110,43,72,1) 100%);
+}
